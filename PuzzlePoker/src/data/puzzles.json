@@ -1,0 +1,168 @@
+{
+  "version": "1.0",
+  "puzzles": [
+    {
+      "id": "pf001",
+      "type": "poker_puzzle",
+      "difficulty": 2,
+      "street": "preflop",
+      "scenario": {
+        "holeCards": [
+          {"suit": "hearts", "rank": "A"},
+          {"suit": "diamonds", "rank": "K"}
+        ],
+        "communityCards": [],
+        "position": "BTN",
+        "potSize": 6,
+        "stackSize": 200,
+        "action": {
+          "actionType": "raise",
+          "previousAction": "call",
+          "betSize": 6
+        },
+        "betSizing": {
+          "minBet": 3,
+          "pot": 6,
+          "maxBet": 12,
+          "recommendedSizes": [3, 6, 9, 12]
+        }
+      },
+      "solution": {
+        "action": "raise",
+        "explanation": "On the preflop in position BTN with AKs, facing a call of 6BB, the optimal play is to raise to 18BB. Premium hand in position warrants an aggressive 3-bet to build pot and isolate.",
+        "equityAnalysis": {
+          "equity": 0.67,
+          "potOdds": 0.029,
+          "handCategory": 1,
+          "handScore": 0.89
+        }
+      }
+    },
+    {
+      "id": "f001",
+      "type": "poker_puzzle",
+      "difficulty": 3,
+      "street": "flop",
+      "scenario": {
+        "holeCards": [
+          {"suit": "hearts", "rank": "J"},
+          {"suit": "hearts", "rank": "T"}
+        ],
+        "communityCards": [
+          {"suit": "hearts", "rank": "Q"},
+          {"suit": "spades", "rank": "9"},
+          {"suit": "diamonds", "rank": "4"}
+        ],
+        "position": "CO",
+        "potSize": 40,
+        "stackSize": 180,
+        "action": {
+          "actionType": "check",
+          "previousAction": "check",
+          "betSize": 0
+        },
+        "betSizing": {
+          "minBet": 20,
+          "pot": 40,
+          "maxBet": 80,
+          "recommendedSizes": [20, 40, 60, 80]
+        }
+      },
+      "solution": {
+        "action": "bet",
+        "explanation": "On the flop in position CO with JTh facing a check, optimal play is to bet 2/3 pot. Strong draw with overcards warrants semi-bluff betting for both value and protection.",
+        "equityAnalysis": {
+          "equity": 0.54,
+          "potOdds": 0.182,
+          "handCategory": 1,
+          "handScore": 0.65
+        }
+      }
+    },
+    {
+      "id": "t001",
+      "type": "poker_puzzle",
+      "difficulty": 4,
+      "street": "turn",
+      "scenario": {
+        "holeCards": [
+          {"suit": "clubs", "rank": "A"},
+          {"suit": "clubs", "rank": "Q"}
+        ],
+        "communityCards": [
+          {"suit": "clubs", "rank": "J"},
+          {"suit": "diamonds", "rank": "T"},
+          {"suit": "hearts", "rank": "7"},
+          {"suit": "clubs", "rank": "2"}
+        ],
+        "position": "BB",
+        "potSize": 120,
+        "stackSize": 240,
+        "action": {
+          "actionType": "bet",
+          "previousAction": "check",
+          "betSize": 60
+        },
+        "betSizing": {
+          "minBet": 60,
+          "pot": 120,
+          "maxBet": 240,
+          "recommendedSizes": [60, 120, 180, 240]
+        }
+      },
+      "solution": {
+        "action": "raise",
+        "explanation": "On the turn in BB with nut flush draw and overcards, facing a half-pot bet, the optimal play is to raise to 180. Strong drawing hand with good equity against villain's betting range.",
+        "equityAnalysis": {
+          "equity": 0.48,
+          "potOdds": 0.33,
+          "handCategory": 1,
+          "handScore": 0.72
+        }
+      }
+    },
+    {
+      "id": "r001",
+      "type": "poker_puzzle",
+      "difficulty": 5,
+      "street": "river",
+      "scenario": {
+        "holeCards": [
+          {"suit": "spades", "rank": "K"},
+          {"suit": "diamonds", "rank": "K"}
+        ],
+        "communityCards": [
+          {"suit": "hearts", "rank": "A"},
+          {"suit": "clubs", "rank": "J"},
+          {"suit": "diamonds", "rank": "8"},
+          {"suit": "spades", "rank": "4"},
+          {"suit": "hearts", "rank": "2"}
+        ],
+        "position": "SB",
+        "potSize": 300,
+        "stackSize": 400,
+        "action": {
+          "actionType": "bet",
+          "previousAction": "check",
+          "betSize": 200
+        },
+        "betSizing": {
+          "minBet": 150,
+          "pot": 300,
+          "maxBet": 600,
+          "recommendedSizes": [150, 300, 450, 600]
+        }
+      },
+      "solution": {
+        "action": "call",
+        "explanation": "On the river in SB with KK facing a 2/3 pot bet on A-high board, optimal play is to call. Strong bluff catcher against villain's polarized betting range.",
+        "equityAnalysis": {
+          "equity": 0.42,
+          "potOdds": 0.4,
+          "handCategory": 2,
+          "handScore": 0.83
+        }
+      }
+    }
+  ]
+}
