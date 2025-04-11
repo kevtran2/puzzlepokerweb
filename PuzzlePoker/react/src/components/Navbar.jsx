@@ -4,12 +4,13 @@ import { Link, useLocation } from 'react-router-dom';
 
 function Navbar() {
   const location = useLocation();
-  
+
   const navItems = [
     { path: '/', label: 'Home' },
     { path: '/puzzles', label: 'Puzzles' },
     { path: '/progress', label: 'Progress' },
     { path: '/profile', label: 'Profile' },
+    { path: '/signin', label: 'Sign In' },
   ];
 
   return (

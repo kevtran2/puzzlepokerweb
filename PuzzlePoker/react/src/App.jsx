@@ -5,6 +5,7 @@ import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import PuzzleView from './pages/PuzzleView';
 import Progress from './pages/Progress';
+import SignIn from './pages/SignIn';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
             <Route path="/puzzles" element={<PuzzleView />} />
             <Route path="/progress" element={<Progress />} />
             <Route path="/profile" element={<div className="p-4">Profile page coming soon</div>} />
+            <Route path="/signin" element={<SignIn />} />
           </Routes>
         </main>
       </div>
