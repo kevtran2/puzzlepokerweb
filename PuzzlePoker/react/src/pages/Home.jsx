@@ -33,7 +33,7 @@ function Home() {
             Train like chess players do. Solve real poker situations and improve your game.
           </p>
           <Link
-            to="/puzzles"
+            to="/signin"
             className="inline-block bg-blue-600 text-white px-8 py-3 rounded-md text-lg font-medium hover:bg-blue-700 transition-colors"
           >
             Start Training

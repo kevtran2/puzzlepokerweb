@@ -1,17 +1,19 @@
 // src/components/Navbar.jsx
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { useAuth } from '../contexts/AuthContext';
 
 function Navbar() {
+  const { currentUser } = useAuth();
   const location = useLocation();
 
   const navItems = [
-    { path: '/', label: 'Home' },
-    { path: '/puzzles', label: 'Puzzles' },
-    { path: '/progress', label: 'Progress' },
-    { path: '/profile', label: 'Profile' },
-    { path: '/signin', label: 'Sign In' },
-  ];
+    { path: '/puzzles', label: 'Puzzles', forUsers: true, forGuests: false },
+    { path: '/progress', label: 'Progress', forUsers: true, forGuests: false },
+    { path: '/signin', label: 'Sign In', forUsers: true, forGuests: true },
+    { path: '/profile', label: 'Profile', forUsers: true, forGuests: false },
+    { path: '/signout', label: 'Sign Out', forUsers: true, forGuests: false },
+  ].filter(item => (currentUser && item.forUsers) || (!currentUser && item.forGuests));
 
   return (
     <nav className="bg-gray-900 text-white shadow-lg">
