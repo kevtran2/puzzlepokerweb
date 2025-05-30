@@ -10,34 +10,49 @@ const playerPositions = [
     { name: "SB", stack: 1000, betSize: 0, className: "top-12 left-0 -translate-y-1/2", betClassName: "below" },
 ];
 
-function Table() {
+function Table({ tablePuzzle }) {
+    if (!tablePuzzle) {
+        return null;
+    }
+
+    const { scenario, solution } = tablePuzzle;
+    const { description, communityCards, potSize, positions } = scenario;
+
     return (
         <div className="flex justify-left items-center">
-            <div className="relative w-[800px] h-[400px] bg-green-900 rounded-full border-8 border-amber-950 shadow-xl mr-16">
+            <div
+                className="relative w-[800px] h-[400px] rounded-full border-8 border-amber-950 shadow-xl mr-16"
+                style={{
+                    backgroundColor: '#065f46',
+                    backgroundImage: `url("data:image/svg+xml;utf8,<svg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'><circle cx='10' cy='10' r='1' fill='%2304a96d' fill-opacity='0.15'/></svg>")`,
+                    backgroundRepeat: 'repeat'
+                }}
+            >
                 {playerPositions.map((player, i) => (
                     <div key={i}>
                         <div
                             className={`absolute ${player.className} text-white font-semibold text-sm text-center`}
                         >
-                            {player.betClassName === 'above' && (<div className={`flex mb-2 justify-center items-center`}>
-                                20
+                            {positions[i]?.betSize > 0 && player.betClassName === 'above' && (<div className={`flex mb-2 justify-center items-center`}>
+                                {positions[i]?.betSize}
                                 <div className={`bg-red-600 ml-1 rounded-full border-2 border-dashed border-red-900 w-4 h-4`}></div>
                             </div>)}
-                            <div
-                                className='flex'>
-                                <Card suit='hearts' rank='A' />
-                                <Card suit='clubs' rank='6' />
-                            </div>
-                            <div className='bg-blue-950 py-1 rounded-md shadow-md'>
+                            {positions[i]?.holeCards.length == 2 && (
+                                <div
+                                    className='flex items-center justify-center'>
+                                    <Card suit={`${positions[i]?.holeCards[0].suit}`} rank={`${positions[i]?.holeCards[0].rank}`} />
+                                    <Card suit={`${positions[i]?.holeCards[1].suit}`} rank={`${positions[i]?.holeCards[1].rank}`} />
+                                </div>)}
+                            <div className={`bg-gray-800 w-28 py-1 rounded-md shadow-md ${positions[i]?.isHero ? 'border border-4 border-blue-900' : ''}`}>
                                 <div>
-                                    {player.name}
+                                    {positions[i]?.position}
                                 </div>
                                 <div>
-                                    {player.stack}
+                                    {positions[i]?.stack}
                                 </div>
                             </div>
-                            {player.betClassName === 'below' && (<div className={`flex mt-2 justify-center items-center`}>
-                                100
+                            {positions[i]?.betSize > 0 && player.betClassName === 'below' && (<div className={`flex mt-2 justify-center items-center`}>
+                                {positions[i]?.betSize}
                                 <div className={`bg-red-600 ml-1 rounded-full border-2 border-dashed border-red-900 w-4 h-4`}></div>
                             </div>)}
                         </div>
@@ -48,14 +63,22 @@ function Table() {
                     Pot: 0
                 </div>
             </div>
-            <div className='flex flex-col border-4 border-gray-600 bg-blue-950 p-4 rounded-md text-white'>
-                <h1 className='italic'>In this scenario, would you...</h1>
-                <button className='bg-red-800 rounded-md mb-2 mt-2 px-8 py-4 text-lg font-bold border border-gray-500 hover:bg-red-700'>FOLD</button>
-                <button className='bg-yellow-700 rounded-md mb-2 px-8 py-4 text-lg font-bold border border-gray-500 hover:bg-yellow-600'>CALL</button>
-                <button className='bg-green-800 rounded-md mb-2 px-8 py-4 text-lg font-bold border border-gray-500 hover:bg-green-700'>BET 60</button>
-                <button className='bg-green-800 rounded-md mb-2 px-8 py-4 text-lg font-bold border border-gray-500 hover:bg-green-700'>ALL IN</button>
+            <div className="flex flex-col gap-4 border-4 border-gray-600 bg-blue-950 p-6 rounded-xl text-white w-64">
+                <h1 className="text-lg mb-2 text-center">{description}</h1>
+                <button className="bg-red-700 rounded-md py-3 px-8 text-lg font-semibold border border-gray-700 hover:bg-red-800 transition-colors duration-150">
+                    {solution?.options[0]}
+                </button>
+                <button className="bg-gray-700 rounded-md py-3 px-8 text-lg font-semibold border border-gray-600 hover:bg-gray-800 transition-colors duration-150">
+                    {solution?.options[1]}
+                </button>
+                <button className="bg-green-700 rounded-md py-3 px-8 text-lg font-semibold border border-gray-700 hover:bg-green-800 transition-colors duration-150">
+                    {solution?.options[2]}
+                </button>
+                <button className="bg-green-800 rounded-md py-3 px-8 text-lg font-semibold border border-gray-700 hover:bg-green-900 transition-colors duration-150">
+                    {solution?.options[3]}
+                </button>
             </div>
-        </div>
+        </div >
     );
 }
 

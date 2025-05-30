@@ -8,6 +8,10 @@ function PuzzleView() {
   const [puzzles, setPuzzles] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
 
+  const [currentTablePuzzle, setCurrentTablePuzzle] = useState(null);
+  const [tablePuzzles, setTablePuzzles] = useState([]);
+  const [currentTableIndex, setCurrentTableIndex] = useState(0);
+
   useEffect(() => {
     // Load puzzles from the JSON file
     fetch('/data/puzzles.json')
@@ -25,6 +29,23 @@ function PuzzleView() {
     setCurrentPuzzle(puzzles[nextIndex]);
   };
 
+  useEffect(() => {
+    // Load puzzles from the JSON file
+    fetch('/data/hungryHorseTest1.json')
+      .then(response => response.json())
+      .then(data => {
+        setTablePuzzles(data.puzzles);
+        setCurrentTablePuzzle(data.puzzles[0]);
+      })
+      .catch(error => console.error('Error loading puzzles:', error));
+  }, []);
+
+  const handleNextTablePuzzle = () => {
+    const nextTableIndex = (currentTableIndex + 1) % tablePuzzles.length;
+    setCurrentIndex(nextTableIndex);
+    setCurrentPuzzle(tablePuzzles[nextTableIndex]);
+  };
+
   return (
     <div className="text-gray-300 mx-auto max-w-fit px-4 py-8">
       <div className="mb-6">
@@ -37,7 +58,9 @@ function PuzzleView() {
           </span>
         </p>
       </div>
-      <Table></Table>
+      <Table
+        tablePuzzle={currentTablePuzzle}
+      />
       <div className='p-40'></div>
       <PuzzleGenerator
         puzzle={currentPuzzle}

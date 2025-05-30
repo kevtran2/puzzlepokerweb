@@ -10,41 +10,44 @@
             "stakes": "2/5 NL",
             "street": "preflop",
             "scenario": {
+                "description": "A weak player in the cut off opens. The two players behind are strong players. Which of the following options should be taken?",
                 "communityCards": [],
-                "position": "BTN",
                 "potSize": 0,
-                "stackSize": 1000,
-                "villains": {
-                    "LJ": {
+                "positions": [
+                    {
+                        "position": "LJ",
                         "isHero": false,
-                        "stackSize": 1000,
+                        "stack": 1000,
                         "betSize": 0,
                         "holeCards": []
                     },
-                    "HJ": {
+                    {
+                        "position": "HJ",
                         "isHero": false,
-                        "stackSize": 1000,
+                        "stack": 1000,
                         "betSize": 0,
                         "holeCards": []
                     },
-                    "CO": {
+                    {
+                        "position": "CO",
                         "isHero": false,
-                        "stackSize": 1000,
-                        "betSize": 0,
+                        "stack": 980,
+                        "betSize": 20,
                         "holeCards": [
                             {
-                                "suit": "hidden",
-                                "rank": "hidden"
+                                "suit": "",
+                                "rank": ""
                             },
                             {
-                                "suit": "hidden",
-                                "rank": "hidden"
+                                "suit": "",
+                                "rank": ""
                             }
                         ]
                     },
-                    "BTN": {
+                    {
+                        "position": "BTN",
                         "isHero": true,
-                        "stackSize": 1000,
+                        "stack": 1000,
                         "betSize": 0,
                         "holeCards": [
                             {
@@ -57,52 +60,29 @@
                             }
                         ]
                     },
-                    "SB": {
+                    {
+                        "position": "SB",
                         "isHero": false,
-                        "stackSize": 1000,
-                        "betSize": 0,
-                        "holeCards": [
-                            {
-                                "suit": "hidden",
-                                "rank": "hidden"
-                            },
-                            {
-                                "suit": "hidden",
-                                "rank": "hidden"
-                            }
-                        ]
+                        "stack": 998,
+                        "betSize": 2,
+                        "holeCards": []
                     },
-                    "BB": {
+                    {
+                        "position": "BB",
                         "isHero": false,
-                        "stackSize": 1000,
-                        "betSize": 0,
-                        "holeCards": [
-                            {
-                                "suit": "hidden",
-                                "rank": "hidden"
-                            },
-                            {
-                                "suit": "hidden",
-                                "rank": "hidden"
-                            }
-                        ]
+                        "stack": 995,
+                        "betSize": 5,
+                        "holeCards": []
                     }
-                },
-                "action": {
-                    "actionType": "raise",
-                    "previousAction": "Fish in cut off opens to 20BB. There are two regs behind.",
-                    "betSize": 20
-                },
-                "multipleChoice": {
-                    "options": [
-                        "Fold",
-                        "Call",
-                        "3-bet Raise 60BB"
-                    ]
-                }
+                ]
             },
             "solution": {
-                "action": "3-bet Raise 60BB",
+                "options": [
+                    "Fold",
+                    "Call",
+                    "3-bet Raise",
+                    "All In"
+                ],
                 "explanation": "With two regs behind, we can 3-bet raise to isolate the pot with the fish when we have position."
             }
         }
