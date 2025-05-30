@@ -1,0 +1,110 @@
+{
+    "version": "1.0",
+    "title": "Hungry Horse Test 1 (Live Low Stakes Test)",
+    "description": "Based off of '99% of Players FAIL This Poker IQ Test' video by hungry horse poker",
+    "puzzles": [
+        {
+            "id": "pf001",
+            "type": "poker_puzzle",
+            "difficulty": 1,
+            "stakes": "2/5 NL",
+            "street": "preflop",
+            "scenario": {
+                "communityCards": [],
+                "position": "BTN",
+                "potSize": 0,
+                "stackSize": 1000,
+                "villains": {
+                    "LJ": {
+                        "isHero": false,
+                        "stackSize": 1000,
+                        "betSize": 0,
+                        "holeCards": []
+                    },
+                    "HJ": {
+                        "isHero": false,
+                        "stackSize": 1000,
+                        "betSize": 0,
+                        "holeCards": []
+                    },
+                    "CO": {
+                        "isHero": false,
+                        "stackSize": 1000,
+                        "betSize": 0,
+                        "holeCards": [
+                            {
+                                "suit": "hidden",
+                                "rank": "hidden"
+                            },
+                            {
+                                "suit": "hidden",
+                                "rank": "hidden"
+                            }
+                        ]
+                    },
+                    "BTN": {
+                        "isHero": true,
+                        "stackSize": 1000,
+                        "betSize": 0,
+                        "holeCards": [
+                            {
+                                "suit": "diamonds",
+                                "rank": "6"
+                            },
+                            {
+                                "suit": "spades",
+                                "rank": "6"
+                            }
+                        ]
+                    },
+                    "SB": {
+                        "isHero": false,
+                        "stackSize": 1000,
+                        "betSize": 0,
+                        "holeCards": [
+                            {
+                                "suit": "hidden",
+                                "rank": "hidden"
+                            },
+                            {
+                                "suit": "hidden",
+                                "rank": "hidden"
+                            }
+                        ]
+                    },
+                    "BB": {
+                        "isHero": false,
+                        "stackSize": 1000,
+                        "betSize": 0,
+                        "holeCards": [
+                            {
+                                "suit": "hidden",
+                                "rank": "hidden"
+                            },
+                            {
+                                "suit": "hidden",
+                                "rank": "hidden"
+                            }
+                        ]
+                    }
+                },
+                "action": {
+                    "actionType": "raise",
+                    "previousAction": "Fish in cut off opens to 20BB. There are two regs behind.",
+                    "betSize": 20
+                },
+                "multipleChoice": {
+                    "options": [
+                        "Fold",
+                        "Call",
+                        "3-bet Raise 60BB"
+                    ]
+                }
+            },
+            "solution": {
+                "action": "3-bet Raise 60BB",
+                "explanation": "With two regs behind, we can 3-bet raise to isolate the pot with the fish when we have position."
+            }
+        }
+    ]
+}

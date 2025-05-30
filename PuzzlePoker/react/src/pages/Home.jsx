@@ -7,12 +7,27 @@ function Home() {
     {
       title: 'Interactive Puzzles',
       description: 'Practice with real poker scenarios and improve your decision-making skills',
-      icon: '🎯'
+      icon: '🧩'
+    },
+    {
+      title: 'Compete with Friends',
+      description: 'Challenge your friends to a game and see who comes out on top',
+      icon: '♣️'
     },
     {
       title: 'Track Progress',
       description: 'Monitor your improvement with detailed statistics and achievements',
       icon: '📈'
+    },
+    {
+      title: 'Playstyle Analysis',
+      description: 'Analyze your playstyle and identify areas for improvement',
+      icon: '🎯'
+    },
+    {
+      title: 'Discuss with the Community',
+      description: 'Discuss poker strategies with other players and learn from each other',
+      icon: '💬'
     },
     {
       title: 'Learn from Pros',
@@ -33,7 +48,7 @@ function Home() {
             Train like chess players do. Solve real poker situations and improve your game.
           </p>
           <Link
-            to="/signin"
+            to="/puzzles"
             className="inline-block bg-blue-600 text-white px-8 py-3 rounded-md text-lg font-medium hover:bg-blue-700 transition-colors"
           >
             Start Training
@@ -41,7 +56,7 @@ function Home() {
         </div>
 
         {/* Features Section */}
-        <div className="grid md:grid-cols-3 gap-8 py-12">
+        <div className="grid md:grid-cols-2 gap-8 py-12">
           {features.map((feature, index) => (
             <div
               key={index}

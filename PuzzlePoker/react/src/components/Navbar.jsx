@@ -8,11 +8,12 @@ function Navbar() {
   const location = useLocation();
 
   const navItems = [
-    { path: '/puzzles', label: 'Puzzles', forUsers: true, forGuests: false },
-    { path: '/progress', label: 'Progress', forUsers: true, forGuests: false },
-    { path: '/signin', label: 'Sign In', forUsers: true, forGuests: true },
-    { path: '/profile', label: 'Profile', forUsers: true, forGuests: false },
-    { path: '/signout', label: 'Sign Out', forUsers: true, forGuests: false },
+    { path: '/puzzles', label: 'Puzzles', forUsers: true, forGuests: true },
+    { path: '/play', label: 'Play', forUsers: true, forGuests: true },
+    //{ path: '/progress', label: 'Progress', forUsers: true, forGuests: false },
+    //{ path: '/profile', label: 'Profile', forUsers: true, forGuests: false },
+    //{ path: '/signin', label: 'Sign In', forUsers: true, forGuests: true },
+    //{ path: '/signout', label: 'Sign Out', forUsers: true, forGuests: false },
   ].filter(item => (currentUser && item.forUsers) || (!currentUser && item.forGuests));
 
   return (

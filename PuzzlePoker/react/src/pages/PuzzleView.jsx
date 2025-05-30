@@ -1,6 +1,7 @@
 // src/pages/PuzzleView.jsx
 import React, { useState, useEffect } from 'react';
 import PuzzleGenerator from '../components/PuzzleGenerator';
+import Table from '../components/Table';
 
 function PuzzleView() {
   const [currentPuzzle, setCurrentPuzzle] = useState(null);
@@ -29,11 +30,11 @@ function PuzzleView() {
       <div className="mb-6">
         <h1 className="text-3xl font-bold mb-2">Poker Puzzle #{currentPuzzle?.id}</h1>
         <p className="text-gray-600">
-          Street: {currentPuzzle?.street.charAt(0).toUpperCase() + currentPuzzle?.street.slice(1)} | 
+          Street: {currentPuzzle?.street.charAt(0).toUpperCase() + currentPuzzle?.street.slice(1)} |
           Difficulty: {'★'.repeat(currentPuzzle?.difficulty || 0)}
         </p>
       </div>
-
+      <Table></Table>
       <PuzzleGenerator
         puzzle={currentPuzzle}
         onSolutionReveal={() => {
