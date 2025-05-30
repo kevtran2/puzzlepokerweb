@@ -26,15 +26,19 @@ function PuzzleView() {
   };
 
   return (
-    <div className="max-w-4xl mx-auto px-4 py-8">
+    <div className="text-gray-300 mx-auto max-w-fit px-4 py-8">
       <div className="mb-6">
         <h1 className="text-3xl font-bold mb-2">Poker Puzzle #{currentPuzzle?.id}</h1>
-        <p className="text-gray-600">
+        <p className="text-gray-400">
           Street: {currentPuzzle?.street.charAt(0).toUpperCase() + currentPuzzle?.street.slice(1)} |
-          Difficulty: {'★'.repeat(currentPuzzle?.difficulty || 0)}
+          Difficulty:
+          <span className="text-yellow-400 ml-1">
+            {'★'.repeat(currentPuzzle?.difficulty || 0)}
+          </span>
         </p>
       </div>
       <Table></Table>
+      <div className='p-40'></div>
       <PuzzleGenerator
         puzzle={currentPuzzle}
         onSolutionReveal={() => {
