@@ -1,4 +1,4 @@
-import React from 'react';
+import { useState, useEffect } from 'react';
 import Card from './Card';
 
 const playerPositions = [
@@ -17,6 +17,31 @@ function Table({ tablePuzzle }) {
 
     const { scenario, solution } = tablePuzzle;
     const { description, communityCards, potSize, positions } = scenario;
+    const { options, correctOptionIndex, explanation } = solution;
+    const [selectedOption, setSelectedOption] = useState(null);
+    const [isCorrect, setIsCorrect] = useState(false);
+    const [correctFirstTry, setCorrectFirstTry] = useState(null);
+
+    useEffect(() => {
+        setSelectedOption(null);
+        setIsCorrect(false);
+        setCorrectFirstTry(null);
+    }, [tablePuzzle]);
+
+    const handleOptionClick = (index) => {
+        if (selectedOption === null) {
+            setSelectedOption(index);
+            setIsCorrect(index === correctOptionIndex);
+            if (correctFirstTry === null) {
+                setCorrectFirstTry(isCorrect);
+            }
+        }
+    }
+
+    const handleReset = () => {
+        setSelectedOption(null);
+        setIsCorrect(false);
+    }
 
     return (
         <div className="flex justify-left items-center">
@@ -59,23 +84,45 @@ function Table({ tablePuzzle }) {
                     </div>
 
                 ))}
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white px-4 py-2 rounded-full font-bold">
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white px-12 py-12 rounded-full font-bold">
                     Pot: 0
                 </div>
+                {selectedOption !== null && (
+                    <div className="absolute bg-gray-900 text-center text-lg top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 px-6 py-6 rounded-md font-bold">
+                        {isCorrect && (
+                            <div className="mt-4 text-green-500">
+                                Correct! {explanation}
+                            </div>
+                        )}
+                        {!isCorrect && (
+                            <div>
+                                <div className="mt-4 text-red-500">
+                                    Incorrect.
+                                </div>
+                                <button
+                                    onClick={handleReset}
+                                    className="mt-4 bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 transition-colors"
+                                >
+                                    Try Again
+                                </button>
+                            </div>
+                        )}
+                    </div>
+                )}
             </div>
             <div className="flex flex-col gap-4 border-4 border-gray-600 bg-blue-950 p-6 rounded-xl text-white w-64">
                 <h1 className="text-lg mb-2 text-center">{description}</h1>
-                <button className="bg-red-700 rounded-md py-3 px-8 text-lg font-semibold border border-gray-700 hover:bg-red-800 transition-colors duration-150">
-                    {solution?.options[0]}
+                <button className="bg-red-700 rounded-md py-3 px-8 text-lg font-semibold border border-gray-700 hover:bg-red-800 transition-colors duration-150" onClick={() => handleOptionClick(0)}>
+                    {options[0]}
                 </button>
-                <button className="bg-gray-700 rounded-md py-3 px-8 text-lg font-semibold border border-gray-600 hover:bg-gray-800 transition-colors duration-150">
-                    {solution?.options[1]}
+                <button className="bg-gray-700 rounded-md py-3 px-8 text-lg font-semibold border border-gray-600 hover:bg-gray-800 transition-colors duration-150" onClick={() => handleOptionClick(1)}>
+                    {options[1]}
                 </button>
-                <button className="bg-green-700 rounded-md py-3 px-8 text-lg font-semibold border border-gray-700 hover:bg-green-800 transition-colors duration-150">
-                    {solution?.options[2]}
+                <button className="bg-green-700 rounded-md py-3 px-8 text-lg font-semibold border border-gray-700 hover:bg-green-800 transition-colors duration-150" onClick={() => handleOptionClick(2)}>
+                    {options[2]}
                 </button>
-                <button className="bg-green-800 rounded-md py-3 px-8 text-lg font-semibold border border-gray-700 hover:bg-green-900 transition-colors duration-150">
-                    {solution?.options[3]}
+                <button className="bg-green-700 rounded-md py-3 px-8 text-lg font-semibold border border-gray-700 hover:bg-green-800 transition-colors duration-150" onClick={() => handleOptionClick(3)}>
+                    {options[3]}
                 </button>
             </div>
         </div >

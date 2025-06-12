@@ -6,6 +6,90 @@
         {
             "id": "pf001",
             "type": "poker_puzzle",
+            "difficulty": 5,
+            "stakes": "2/5 NL",
+            "street": "preflop",
+            "scenario": {
+                "description": "A weak player in the cut off opens. The two players behind are strong players. Which of the following options should be taken?",
+                "communityCards": [],
+                "potSize": 0,
+                "positions": [
+                    {
+                        "position": "LJ",
+                        "isHero": false,
+                        "stack": 1000,
+                        "betSize": 0,
+                        "holeCards": []
+                    },
+                    {
+                        "position": "HJ",
+                        "isHero": false,
+                        "stack": 1000,
+                        "betSize": 0,
+                        "holeCards": []
+                    },
+                    {
+                        "position": "CO",
+                        "isHero": false,
+                        "stack": 980,
+                        "betSize": 20,
+                        "holeCards": [
+                            {
+                                "suit": "",
+                                "rank": ""
+                            },
+                            {
+                                "suit": "",
+                                "rank": ""
+                            }
+                        ]
+                    },
+                    {
+                        "position": "BTN",
+                        "isHero": true,
+                        "stack": 1000,
+                        "betSize": 0,
+                        "holeCards": [
+                            {
+                                "suit": "diamonds",
+                                "rank": "6"
+                            },
+                            {
+                                "suit": "spades",
+                                "rank": "A"
+                            }
+                        ]
+                    },
+                    {
+                        "position": "SB",
+                        "isHero": false,
+                        "stack": 998,
+                        "betSize": 2,
+                        "holeCards": []
+                    },
+                    {
+                        "position": "BB",
+                        "isHero": false,
+                        "stack": 995,
+                        "betSize": 5,
+                        "holeCards": []
+                    }
+                ]
+            },
+            "solution": {
+                "options": [
+                    "Fold",
+                    "Call",
+                    "3-bet Raise",
+                    "All In"
+                ],
+                "correctOptionIndex": 2,
+                "explanation": "With two regs behind, we should 3-bet raise to isolate the pot with the fish when we have position."
+            }
+        },
+        {
+            "id": "pf002",
+            "type": "poker_puzzle",
             "difficulty": 1,
             "stakes": "2/5 NL",
             "street": "preflop",
@@ -56,7 +140,7 @@
                             },
                             {
                                 "suit": "spades",
-                                "rank": "6"
+                                "rank": "A"
                             }
                         ]
                     },
@@ -83,6 +167,7 @@
                     "3-bet Raise",
                     "All In"
                 ],
+                "correctOptionIndex": 2,
                 "explanation": "With two regs behind, we can 3-bet raise to isolate the pot with the fish when we have position."
             }
         }

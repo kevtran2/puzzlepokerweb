@@ -1,5 +1,4 @@
 // src/components/PuzzleCard.jsx
-import React from 'react';
 
 function PuzzleCard({ puzzle, onSelect }) {
   const { id, difficulty, category, description } = puzzle;

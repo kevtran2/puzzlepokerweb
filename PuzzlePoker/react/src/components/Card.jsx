@@ -1,5 +1,4 @@
 // src/components/Card.jsx
-import React from 'react';
 import { getSuitSymbol, getSuitColor } from '../utils/cardUtils';
 
 function Card({ suit, rank }) {

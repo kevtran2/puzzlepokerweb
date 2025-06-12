@@ -1,5 +1,4 @@
 // src/components/Navbar.jsx
-import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 
@@ -10,10 +9,6 @@ function Navbar() {
   const navItems = [
     { path: '/puzzles', label: 'Puzzles', forUsers: true, forGuests: true },
     { path: '/play', label: 'Play', forUsers: true, forGuests: true },
-    //{ path: '/progress', label: 'Progress', forUsers: true, forGuests: false },
-    //{ path: '/profile', label: 'Profile', forUsers: true, forGuests: false },
-    //{ path: '/signin', label: 'Sign In', forUsers: true, forGuests: true },
-    //{ path: '/signout', label: 'Sign Out', forUsers: true, forGuests: false },
   ].filter(item => (currentUser && item.forUsers) || (!currentUser && item.forGuests));
 
   return (
