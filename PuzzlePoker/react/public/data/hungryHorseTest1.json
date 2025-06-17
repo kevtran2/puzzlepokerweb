@@ -6,11 +6,11 @@
         {
             "id": "pf001",
             "type": "poker_puzzle",
-            "difficulty": 5,
+            "difficulty": 2,
             "stakes": "2/5 NL",
             "street": "preflop",
             "scenario": {
-                "description": "A weak player in the cut off opens. The two players behind are strong players. Which of the following options should be taken?",
+                "description": "A weak player in the cut off open raises. The two players behind are strong players.",
                 "communityCards": [],
                 "potSize": 0,
                 "positions": [
@@ -56,7 +56,7 @@
                             },
                             {
                                 "suit": "spades",
-                                "rank": "A"
+                                "rank": "6"
                             }
                         ]
                     },
@@ -80,9 +80,9 @@
                 "options": [
                     "Fold",
                     "Call",
-                    "3-bet Raise",
-                    "All In"
+                    "3-bet Raise"
                 ],
+                "hint": "The players behind you are strong. The player before you is weak. Do you see any options that would allow you to play more often against the weaker player and avoid action with stronger players?",
                 "correctOptionIndex": 2,
                 "explanation": "With two regs behind, we should 3-bet raise to isolate the pot with the fish when we have position."
             }
@@ -90,11 +90,11 @@
         {
             "id": "pf002",
             "type": "poker_puzzle",
-            "difficulty": 1,
+            "difficulty": 4,
             "stakes": "2/5 NL",
             "street": "preflop",
             "scenario": {
-                "description": "A weak player in the cut off opens. The two players behind are strong players. Which of the following options should be taken?",
+                "description": "Passive player who is limping often raises.",
                 "communityCards": [],
                 "potSize": 0,
                 "positions": [
@@ -102,8 +102,101 @@
                         "position": "LJ",
                         "isHero": false,
                         "stack": 1000,
+                        "betSize": 25,
+                        "holeCards": [
+                            {
+                                "suit": "",
+                                "rank": ""
+                            },
+                            {
+                                "suit": "",
+                                "rank": ""
+                            }
+                        ]
+                    },
+                    {
+                        "position": "HJ",
+                        "isHero": true,
+                        "stack": 1000,
+                        "betSize": 0,
+                        "holeCards": [
+                            {
+                                "suit": "hearts",
+                                "rank": "9"
+                            },
+                            {
+                                "suit": "hearts",
+                                "rank": "8"
+                            }
+                        ]
+                    },
+                    {
+                        "position": "CO",
+                        "isHero": false,
+                        "stack": 1000,
                         "betSize": 0,
                         "holeCards": []
+                    },
+                    {
+                        "position": "BTN",
+                        "isHero": false,
+                        "stack": 1000,
+                        "betSize": 0,
+                        "holeCards": []
+                    },
+                    {
+                        "position": "SB",
+                        "isHero": false,
+                        "stack": 998,
+                        "betSize": 2,
+                        "holeCards": []
+                    },
+                    {
+                        "position": "BB",
+                        "isHero": false,
+                        "stack": 995,
+                        "betSize": 5,
+                        "holeCards": []
+                    }
+                ]
+            },
+            "solution": {
+                "options": [
+                    "Fold",
+                    "Call",
+                    "3-bet Raise"
+                ],
+                "hint": "By limping many of the hands they should be raising with, this leaves their raising range to be even stronger.",
+                "correctOptionIndex": 0,
+                "explanation": "Considering that the player is limping more often than they should, we should expect their raising range to be pretty strong. Therefore, we want to fold since 9h8h is not strong enough to compete with their range."
+            }
+        },
+        {
+            "id": "pf003",
+            "type": "poker_puzzle",
+            "difficulty": 3,
+            "stakes": "2/5 NL",
+            "street": "preflop",
+            "scenario": {
+                "description": "",
+                "communityCards": [],
+                "potSize": 0,
+                "positions": [
+                    {
+                        "position": "LJ",
+                        "isHero": false,
+                        "stack": 980,
+                        "betSize": 20,
+                        "holeCards": [
+                            {
+                                "suit": "",
+                                "rank": ""
+                            },
+                            {
+                                "suit": "",
+                                "rank": ""
+                            }
+                        ]
                     },
                     {
                         "position": "HJ",
@@ -130,19 +223,214 @@
                     },
                     {
                         "position": "BTN",
+                        "isHero": false,
+                        "stack": 980,
+                        "betSize": 20,
+                        "holeCards": [
+                            {
+                                "suit": "",
+                                "rank": ""
+                            },
+                            {
+                                "suit": "",
+                                "rank": ""
+                            }
+                        ]
+                    },
+                    {
+                        "position": "SB",
+                        "isHero": false,
+                        "stack": 998,
+                        "betSize": 2,
+                        "holeCards": []
+                    },
+                    {
+                        "position": "BB",
+                        "isHero": true,
+                        "stack": 995,
+                        "betSize": 5,
+                        "holeCards": [
+                            {
+                                "suit": "spades",
+                                "rank": "7"
+                            },
+                            {
+                                "suit": "spades",
+                                "rank": "6"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "solution": {
+                "options": [
+                    "Fold",
+                    "Call",
+                    "3-bet Raise"
+                ],
+                "hint": "Your hand has the potential to make a big hand(straights and flushes), but is probably losing to most of your opponents' calling range.",
+                "correctOptionIndex": 1,
+                "explanation": "Considering the stack depth, calling is appropriate at this price. If the flop is favorable, we can continue, otherwise we can quickly fold."
+            }
+        },
+        {
+            "id": "pf004",
+            "type": "poker_puzzle",
+            "difficulty": 4,
+            "stakes": "2/5 NL",
+            "street": "preflop",
+            "scenario": {
+                "description": "Reg in the LJ raises. All the players behind are fish.",
+                "communityCards": [],
+                "potSize": 0,
+                "positions": [
+                    {
+                        "position": "LJ",
+                        "isHero": false,
+                        "stack": 980,
+                        "betSize": 20,
+                        "holeCards": [
+                            {
+                                "suit": "",
+                                "rank": ""
+                            },
+                            {
+                                "suit": "",
+                                "rank": ""
+                            }
+                        ]
+                    },
+                    {
+                        "position": "HJ",
                         "isHero": true,
                         "stack": 1000,
                         "betSize": 0,
                         "holeCards": [
                             {
                                 "suit": "diamonds",
-                                "rank": "6"
+                                "rank": "10"
                             },
                             {
-                                "suit": "spades",
-                                "rank": "A"
+                                "suit": "hearts",
+                                "rank": "10"
                             }
                         ]
+                    },
+                    {
+                        "position": "CO",
+                        "isHero": false,
+                        "stack": 1000,
+                        "betSize": 0,
+                        "holeCards": [
+                            {
+                                "suit": "",
+                                "rank": ""
+                            },
+                            {
+                                "suit": "",
+                                "rank": ""
+                            }
+                        ]
+                    },
+                    {
+                        "position": "BTN",
+                        "isHero": false,
+                        "stack": 1000,
+                        "betSize": 0,
+                        "holeCards": [
+                            {
+                                "suit": "",
+                                "rank": ""
+                            },
+                            {
+                                "suit": "",
+                                "rank": ""
+                            }
+                        ]
+                    },
+                    {
+                        "position": "SB",
+                        "isHero": false,
+                        "stack": 998,
+                        "betSize": 2,
+                        "holeCards": [
+                            {
+                                "suit": "",
+                                "rank": ""
+                            },
+                            {
+                                "suit": "",
+                                "rank": ""
+                            }
+                        ]
+                    },
+                    {
+                        "position": "BB",
+                        "isHero": false,
+                        "stack": 995,
+                        "betSize": 5,
+                        "holeCards": [
+                            {
+                                "suit": "",
+                                "rank": ""
+                            },
+                            {
+                                "suit": "",
+                                "rank": ""
+                            }
+                        ]
+                    }
+                ]
+            },
+            "solution": {
+                "options": [
+                    "Fold",
+                    "Call",
+                    "3-bet Raise"
+                ],
+                "hint": "With so many weak players behind, we want them to join in. Our hand is not at the top of our range.",
+                "correctOptionIndex": 1,
+                "explanation": "With many weak players behind, we want to call to keep those plaers in considering our hand is not strong enough to 3-bet raise against the strong reg."
+            }
+        },
+        {
+            "id": "pf005",
+            "type": "poker_puzzle",
+            "difficulty": 4,
+            "stakes": "2/5 NL",
+            "street": "preflop",
+            "scenario": {
+                "description": "",
+                "communityCards": [],
+                "potSize": 0,
+                "positions": [
+                    {
+                        "position": "LJ",
+                        "isHero": false,
+                        "stack": 1000,
+                        "betSize": 0,
+                        "holeCards": []
+                    },
+                    {
+                        "position": "HJ",
+                        "isHero": false,
+                        "stack": 1000,
+                        "betSize": 0,
+                        "holeCards": []
+                    },
+                    {
+                        "position": "CO",
+                        "isHero": false,
+                        "stack": 1000,
+                        "betSize": 0,
+                        "holeCards": []
+                    },
+                    {
+                        "position": "BTN",
+                        "isHero": false,
+                        "stack": 1000,
+                        "betSize": 0,
+                        "holeCards": []
                     },
                     {
                         "position": "SB",
@@ -167,8 +455,1922 @@
                     "3-bet Raise",
                     "All In"
                 ],
-                "correctOptionIndex": 2,
-                "explanation": "With two regs behind, we can 3-bet raise to isolate the pot with the fish when we have position."
+                "correctOptionIndex": 0,
+                "explanation": ""
+            }
+        },
+        {
+            "id": "pf006",
+            "type": "poker_puzzle",
+            "difficulty": 4,
+            "stakes": "2/5 NL",
+            "street": "preflop",
+            "scenario": {
+                "description": "",
+                "communityCards": [],
+                "potSize": 0,
+                "positions": [
+                    {
+                        "position": "LJ",
+                        "isHero": false,
+                        "stack": 1000,
+                        "betSize": 0,
+                        "holeCards": []
+                    },
+                    {
+                        "position": "HJ",
+                        "isHero": false,
+                        "stack": 1000,
+                        "betSize": 0,
+                        "holeCards": []
+                    },
+                    {
+                        "position": "CO",
+                        "isHero": false,
+                        "stack": 1000,
+                        "betSize": 0,
+                        "holeCards": []
+                    },
+                    {
+                        "position": "BTN",
+                        "isHero": false,
+                        "stack": 1000,
+                        "betSize": 0,
+                        "holeCards": []
+                    },
+                    {
+                        "position": "SB",
+                        "isHero": false,
+                        "stack": 998,
+                        "betSize": 2,
+                        "holeCards": []
+                    },
+                    {
+                        "position": "BB",
+                        "isHero": false,
+                        "stack": 995,
+                        "betSize": 5,
+                        "holeCards": []
+                    }
+                ]
+            },
+            "solution": {
+                "options": [
+                    "Fold",
+                    "Call",
+                    "3-bet Raise",
+                    "All In"
+                ],
+                "correctOptionIndex": 0,
+                "explanation": ""
+            }
+        },
+        {
+            "id": "pf007",
+            "type": "poker_puzzle",
+            "difficulty": 4,
+            "stakes": "2/5 NL",
+            "street": "preflop",
+            "scenario": {
+                "description": "",
+                "communityCards": [],
+                "potSize": 0,
+                "positions": [
+                    {
+                        "position": "LJ",
+                        "isHero": false,
+                        "stack": 1000,
+                        "betSize": 0,
+                        "holeCards": []
+                    },
+                    {
+                        "position": "HJ",
+                        "isHero": false,
+                        "stack": 1000,
+                        "betSize": 0,
+                        "holeCards": []
+                    },
+                    {
+                        "position": "CO",
+                        "isHero": false,
+                        "stack": 1000,
+                        "betSize": 0,
+                        "holeCards": []
+                    },
+                    {
+                        "position": "BTN",
+                        "isHero": false,
+                        "stack": 1000,
+                        "betSize": 0,
+                        "holeCards": []
+                    },
+                    {
+                        "position": "SB",
+                        "isHero": false,
+                        "stack": 998,
+                        "betSize": 2,
+                        "holeCards": []
+                    },
+                    {
+                        "position": "BB",
+                        "isHero": false,
+                        "stack": 995,
+                        "betSize": 5,
+                        "holeCards": []
+                    }
+                ]
+            },
+            "solution": {
+                "options": [
+                    "Fold",
+                    "Call",
+                    "3-bet Raise",
+                    "All In"
+                ],
+                "correctOptionIndex": 0,
+                "explanation": ""
+            }
+        },
+        {
+            "id": "pf008",
+            "type": "poker_puzzle",
+            "difficulty": 4,
+            "stakes": "2/5 NL",
+            "street": "preflop",
+            "scenario": {
+                "description": "",
+                "communityCards": [],
+                "potSize": 0,
+                "positions": [
+                    {
+                        "position": "LJ",
+                        "isHero": false,
+                        "stack": 1000,
+                        "betSize": 0,
+                        "holeCards": []
+                    },
+                    {
+                        "position": "HJ",
+                        "isHero": false,
+                        "stack": 1000,
+                        "betSize": 0,
+                        "holeCards": []
+                    },
+                    {
+                        "position": "CO",
+                        "isHero": false,
+                        "stack": 1000,
+                        "betSize": 0,
+                        "holeCards": []
+                    },
+                    {
+                        "position": "BTN",
+                        "isHero": false,
+                        "stack": 1000,
+                        "betSize": 0,
+                        "holeCards": []
+                    },
+                    {
+                        "position": "SB",
+                        "isHero": false,
+                        "stack": 998,
+                        "betSize": 2,
+                        "holeCards": []
+                    },
+                    {
+                        "position": "BB",
+                        "isHero": false,
+                        "stack": 995,
+                        "betSize": 5,
+                        "holeCards": []
+                    }
+                ]
+            },
+            "solution": {
+                "options": [
+                    "Fold",
+                    "Call",
+                    "3-bet Raise",
+                    "All In"
+                ],
+                "correctOptionIndex": 0,
+                "explanation": ""
+            }
+        },
+        {
+            "id": "pf009",
+            "type": "poker_puzzle",
+            "difficulty": 4,
+            "stakes": "2/5 NL",
+            "street": "preflop",
+            "scenario": {
+                "description": "",
+                "communityCards": [],
+                "potSize": 0,
+                "positions": [
+                    {
+                        "position": "LJ",
+                        "isHero": false,
+                        "stack": 1000,
+                        "betSize": 0,
+                        "holeCards": []
+                    },
+                    {
+                        "position": "HJ",
+                        "isHero": false,
+                        "stack": 1000,
+                        "betSize": 0,
+                        "holeCards": []
+                    },
+                    {
+                        "position": "CO",
+                        "isHero": false,
+                        "stack": 1000,
+                        "betSize": 0,
+                        "holeCards": []
+                    },
+                    {
+                        "position": "BTN",
+                        "isHero": false,
+                        "stack": 1000,
+                        "betSize": 0,
+                        "holeCards": []
+                    },
+                    {
+                        "position": "SB",
+                        "isHero": false,
+                        "stack": 998,
+                        "betSize": 2,
+                        "holeCards": []
+                    },
+                    {
+                        "position": "BB",
+                        "isHero": false,
+                        "stack": 995,
+                        "betSize": 5,
+                        "holeCards": []
+                    }
+                ]
+            },
+            "solution": {
+                "options": [
+                    "Fold",
+                    "Call",
+                    "3-bet Raise",
+                    "All In"
+                ],
+                "correctOptionIndex": 0,
+                "explanation": ""
+            }
+        },
+        {
+            "id": "pf010",
+            "type": "poker_puzzle",
+            "difficulty": 4,
+            "stakes": "2/5 NL",
+            "street": "preflop",
+            "scenario": {
+                "description": "",
+                "communityCards": [],
+                "potSize": 0,
+                "positions": [
+                    {
+                        "position": "LJ",
+                        "isHero": false,
+                        "stack": 1000,
+                        "betSize": 0,
+                        "holeCards": []
+                    },
+                    {
+                        "position": "HJ",
+                        "isHero": false,
+                        "stack": 1000,
+                        "betSize": 0,
+                        "holeCards": []
+                    },
+                    {
+                        "position": "CO",
+                        "isHero": false,
+                        "stack": 1000,
+                        "betSize": 0,
+                        "holeCards": []
+                    },
+                    {
+                        "position": "BTN",
+                        "isHero": false,
+                        "stack": 1000,
+                        "betSize": 0,
+                        "holeCards": []
+                    },
+                    {
+                        "position": "SB",
+                        "isHero": false,
+                        "stack": 998,
+                        "betSize": 2,
+                        "holeCards": []
+                    },
+                    {
+                        "position": "BB",
+                        "isHero": false,
+                        "stack": 995,
+                        "betSize": 5,
+                        "holeCards": []
+                    }
+                ]
+            },
+            "solution": {
+                "options": [
+                    "Fold",
+                    "Call",
+                    "3-bet Raise",
+                    "All In"
+                ],
+                "correctOptionIndex": 0,
+                "explanation": ""
+            }
+        },
+        {
+            "id": "pf011",
+            "type": "poker_puzzle",
+            "difficulty": 4,
+            "stakes": "2/5 NL",
+            "street": "preflop",
+            "scenario": {
+                "description": "",
+                "communityCards": [],
+                "potSize": 0,
+                "positions": [
+                    {
+                        "position": "LJ",
+                        "isHero": false,
+                        "stack": 1000,
+                        "betSize": 0,
+                        "holeCards": []
+                    },
+                    {
+                        "position": "HJ",
+                        "isHero": false,
+                        "stack": 1000,
+                        "betSize": 0,
+                        "holeCards": []
+                    },
+                    {
+                        "position": "CO",
+                        "isHero": false,
+                        "stack": 1000,
+                        "betSize": 0,
+                        "holeCards": []
+                    },
+                    {
+                        "position": "BTN",
+                        "isHero": false,
+                        "stack": 1000,
+                        "betSize": 0,
+                        "holeCards": []
+                    },
+                    {
+                        "position": "SB",
+                        "isHero": false,
+                        "stack": 998,
+                        "betSize": 2,
+                        "holeCards": []
+                    },
+                    {
+                        "position": "BB",
+                        "isHero": false,
+                        "stack": 995,
+                        "betSize": 5,
+                        "holeCards": []
+                    }
+                ]
+            },
+            "solution": {
+                "options": [
+                    "Fold",
+                    "Call",
+                    "3-bet Raise",
+                    "All In"
+                ],
+                "correctOptionIndex": 0,
+                "explanation": ""
+            }
+        },
+        {
+            "id": "pf012",
+            "type": "poker_puzzle",
+            "difficulty": 4,
+            "stakes": "2/5 NL",
+            "street": "preflop",
+            "scenario": {
+                "description": "",
+                "communityCards": [],
+                "potSize": 0,
+                "positions": [
+                    {
+                        "position": "LJ",
+                        "isHero": false,
+                        "stack": 1000,
+                        "betSize": 0,
+                        "holeCards": []
+                    },
+                    {
+                        "position": "HJ",
+                        "isHero": false,
+                        "stack": 1000,
+                        "betSize": 0,
+                        "holeCards": []
+                    },
+                    {
+                        "position": "CO",
+                        "isHero": false,
+                        "stack": 1000,
+                        "betSize": 0,
+                        "holeCards": []
+                    },
+                    {
+                        "position": "BTN",
+                        "isHero": false,
+                        "stack": 1000,
+                        "betSize": 0,
+                        "holeCards": []
+                    },
+                    {
+                        "position": "SB",
+                        "isHero": false,
+                        "stack": 998,
+                        "betSize": 2,
+                        "holeCards": []
+                    },
+                    {
+                        "position": "BB",
+                        "isHero": false,
+                        "stack": 995,
+                        "betSize": 5,
+                        "holeCards": []
+                    }
+                ]
+            },
+            "solution": {
+                "options": [
+                    "Fold",
+                    "Call",
+                    "3-bet Raise",
+                    "All In"
+                ],
+                "correctOptionIndex": 0,
+                "explanation": ""
+            }
+        },
+        {
+            "id": "pf013",
+            "type": "poker_puzzle",
+            "difficulty": 4,
+            "stakes": "2/5 NL",
+            "street": "preflop",
+            "scenario": {
+                "description": "",
+                "communityCards": [],
+                "potSize": 0,
+                "positions": [
+                    {
+                        "position": "LJ",
+                        "isHero": false,
+                        "stack": 1000,
+                        "betSize": 0,
+                        "holeCards": []
+                    },
+                    {
+                        "position": "HJ",
+                        "isHero": false,
+                        "stack": 1000,
+                        "betSize": 0,
+                        "holeCards": []
+                    },
+                    {
+                        "position": "CO",
+                        "isHero": false,
+                        "stack": 1000,
+                        "betSize": 0,
+                        "holeCards": []
+                    },
+                    {
+                        "position": "BTN",
+                        "isHero": false,
+                        "stack": 1000,
+                        "betSize": 0,
+                        "holeCards": []
+                    },
+                    {
+                        "position": "SB",
+                        "isHero": false,
+                        "stack": 998,
+                        "betSize": 2,
+                        "holeCards": []
+                    },
+                    {
+                        "position": "BB",
+                        "isHero": false,
+                        "stack": 995,
+                        "betSize": 5,
+                        "holeCards": []
+                    }
+                ]
+            },
+            "solution": {
+                "options": [
+                    "Fold",
+                    "Call",
+                    "3-bet Raise",
+                    "All In"
+                ],
+                "correctOptionIndex": 0,
+                "explanation": ""
+            }
+        },
+        {
+            "id": "pf014",
+            "type": "poker_puzzle",
+            "difficulty": 4,
+            "stakes": "2/5 NL",
+            "street": "preflop",
+            "scenario": {
+                "description": "",
+                "communityCards": [],
+                "potSize": 0,
+                "positions": [
+                    {
+                        "position": "LJ",
+                        "isHero": false,
+                        "stack": 1000,
+                        "betSize": 0,
+                        "holeCards": []
+                    },
+                    {
+                        "position": "HJ",
+                        "isHero": false,
+                        "stack": 1000,
+                        "betSize": 0,
+                        "holeCards": []
+                    },
+                    {
+                        "position": "CO",
+                        "isHero": false,
+                        "stack": 1000,
+                        "betSize": 0,
+                        "holeCards": []
+                    },
+                    {
+                        "position": "BTN",
+                        "isHero": false,
+                        "stack": 1000,
+                        "betSize": 0,
+                        "holeCards": []
+                    },
+                    {
+                        "position": "SB",
+                        "isHero": false,
+                        "stack": 998,
+                        "betSize": 2,
+                        "holeCards": []
+                    },
+                    {
+                        "position": "BB",
+                        "isHero": false,
+                        "stack": 995,
+                        "betSize": 5,
+                        "holeCards": []
+                    }
+                ]
+            },
+            "solution": {
+                "options": [
+                    "Fold",
+                    "Call",
+                    "3-bet Raise",
+                    "All In"
+                ],
+                "correctOptionIndex": 0,
+                "explanation": ""
+            }
+        },
+        {
+            "id": "pf015",
+            "type": "poker_puzzle",
+            "difficulty": 4,
+            "stakes": "2/5 NL",
+            "street": "preflop",
+            "scenario": {
+                "description": "",
+                "communityCards": [],
+                "potSize": 0,
+                "positions": [
+                    {
+                        "position": "LJ",
+                        "isHero": false,
+                        "stack": 1000,
+                        "betSize": 0,
+                        "holeCards": []
+                    },
+                    {
+                        "position": "HJ",
+                        "isHero": false,
+                        "stack": 1000,
+                        "betSize": 0,
+                        "holeCards": []
+                    },
+                    {
+                        "position": "CO",
+                        "isHero": false,
+                        "stack": 1000,
+                        "betSize": 0,
+                        "holeCards": []
+                    },
+                    {
+                        "position": "BTN",
+                        "isHero": false,
+                        "stack": 1000,
+                        "betSize": 0,
+                        "holeCards": []
+                    },
+                    {
+                        "position": "SB",
+                        "isHero": false,
+                        "stack": 998,
+                        "betSize": 2,
+                        "holeCards": []
+                    },
+                    {
+                        "position": "BB",
+                        "isHero": false,
+                        "stack": 995,
+                        "betSize": 5,
+                        "holeCards": []
+                    }
+                ]
+            },
+            "solution": {
+                "options": [
+                    "Fold",
+                    "Call",
+                    "3-bet Raise",
+                    "All In"
+                ],
+                "correctOptionIndex": 0,
+                "explanation": ""
+            }
+        },
+        {
+            "id": "pf016",
+            "type": "poker_puzzle",
+            "difficulty": 4,
+            "stakes": "2/5 NL",
+            "street": "preflop",
+            "scenario": {
+                "description": "",
+                "communityCards": [],
+                "potSize": 0,
+                "positions": [
+                    {
+                        "position": "LJ",
+                        "isHero": false,
+                        "stack": 1000,
+                        "betSize": 0,
+                        "holeCards": []
+                    },
+                    {
+                        "position": "HJ",
+                        "isHero": false,
+                        "stack": 1000,
+                        "betSize": 0,
+                        "holeCards": []
+                    },
+                    {
+                        "position": "CO",
+                        "isHero": false,
+                        "stack": 1000,
+                        "betSize": 0,
+                        "holeCards": []
+                    },
+                    {
+                        "position": "BTN",
+                        "isHero": false,
+                        "stack": 1000,
+                        "betSize": 0,
+                        "holeCards": []
+                    },
+                    {
+                        "position": "SB",
+                        "isHero": false,
+                        "stack": 998,
+                        "betSize": 2,
+                        "holeCards": []
+                    },
+                    {
+                        "position": "BB",
+                        "isHero": false,
+                        "stack": 995,
+                        "betSize": 5,
+                        "holeCards": []
+                    }
+                ]
+            },
+            "solution": {
+                "options": [
+                    "Fold",
+                    "Call",
+                    "3-bet Raise",
+                    "All In"
+                ],
+                "correctOptionIndex": 0,
+                "explanation": ""
+            }
+        },
+        {
+            "id": "pf017",
+            "type": "poker_puzzle",
+            "difficulty": 4,
+            "stakes": "2/5 NL",
+            "street": "preflop",
+            "scenario": {
+                "description": "",
+                "communityCards": [],
+                "potSize": 0,
+                "positions": [
+                    {
+                        "position": "LJ",
+                        "isHero": false,
+                        "stack": 1000,
+                        "betSize": 0,
+                        "holeCards": []
+                    },
+                    {
+                        "position": "HJ",
+                        "isHero": false,
+                        "stack": 1000,
+                        "betSize": 0,
+                        "holeCards": []
+                    },
+                    {
+                        "position": "CO",
+                        "isHero": false,
+                        "stack": 1000,
+                        "betSize": 0,
+                        "holeCards": []
+                    },
+                    {
+                        "position": "BTN",
+                        "isHero": false,
+                        "stack": 1000,
+                        "betSize": 0,
+                        "holeCards": []
+                    },
+                    {
+                        "position": "SB",
+                        "isHero": false,
+                        "stack": 998,
+                        "betSize": 2,
+                        "holeCards": []
+                    },
+                    {
+                        "position": "BB",
+                        "isHero": false,
+                        "stack": 995,
+                        "betSize": 5,
+                        "holeCards": []
+                    }
+                ]
+            },
+            "solution": {
+                "options": [
+                    "Fold",
+                    "Call",
+                    "3-bet Raise",
+                    "All In"
+                ],
+                "correctOptionIndex": 0,
+                "explanation": ""
+            }
+        },
+        {
+            "id": "pf018",
+            "type": "poker_puzzle",
+            "difficulty": 4,
+            "stakes": "2/5 NL",
+            "street": "preflop",
+            "scenario": {
+                "description": "",
+                "communityCards": [],
+                "potSize": 0,
+                "positions": [
+                    {
+                        "position": "LJ",
+                        "isHero": false,
+                        "stack": 1000,
+                        "betSize": 0,
+                        "holeCards": []
+                    },
+                    {
+                        "position": "HJ",
+                        "isHero": false,
+                        "stack": 1000,
+                        "betSize": 0,
+                        "holeCards": []
+                    },
+                    {
+                        "position": "CO",
+                        "isHero": false,
+                        "stack": 1000,
+                        "betSize": 0,
+                        "holeCards": []
+                    },
+                    {
+                        "position": "BTN",
+                        "isHero": false,
+                        "stack": 1000,
+                        "betSize": 0,
+                        "holeCards": []
+                    },
+                    {
+                        "position": "SB",
+                        "isHero": false,
+                        "stack": 998,
+                        "betSize": 2,
+                        "holeCards": []
+                    },
+                    {
+                        "position": "BB",
+                        "isHero": false,
+                        "stack": 995,
+                        "betSize": 5,
+                        "holeCards": []
+                    }
+                ]
+            },
+            "solution": {
+                "options": [
+                    "Fold",
+                    "Call",
+                    "3-bet Raise",
+                    "All In"
+                ],
+                "correctOptionIndex": 0,
+                "explanation": ""
+            }
+        },
+        {
+            "id": "pf019",
+            "type": "poker_puzzle",
+            "difficulty": 4,
+            "stakes": "2/5 NL",
+            "street": "preflop",
+            "scenario": {
+                "description": "",
+                "communityCards": [],
+                "potSize": 0,
+                "positions": [
+                    {
+                        "position": "LJ",
+                        "isHero": false,
+                        "stack": 1000,
+                        "betSize": 0,
+                        "holeCards": []
+                    },
+                    {
+                        "position": "HJ",
+                        "isHero": false,
+                        "stack": 1000,
+                        "betSize": 0,
+                        "holeCards": []
+                    },
+                    {
+                        "position": "CO",
+                        "isHero": false,
+                        "stack": 1000,
+                        "betSize": 0,
+                        "holeCards": []
+                    },
+                    {
+                        "position": "BTN",
+                        "isHero": false,
+                        "stack": 1000,
+                        "betSize": 0,
+                        "holeCards": []
+                    },
+                    {
+                        "position": "SB",
+                        "isHero": false,
+                        "stack": 998,
+                        "betSize": 2,
+                        "holeCards": []
+                    },
+                    {
+                        "position": "BB",
+                        "isHero": false,
+                        "stack": 995,
+                        "betSize": 5,
+                        "holeCards": []
+                    }
+                ]
+            },
+            "solution": {
+                "options": [
+                    "Fold",
+                    "Call",
+                    "3-bet Raise",
+                    "All In"
+                ],
+                "correctOptionIndex": 0,
+                "explanation": ""
+            }
+        },
+        {
+            "id": "pf020",
+            "type": "poker_puzzle",
+            "difficulty": 4,
+            "stakes": "2/5 NL",
+            "street": "preflop",
+            "scenario": {
+                "description": "",
+                "communityCards": [],
+                "potSize": 0,
+                "positions": [
+                    {
+                        "position": "LJ",
+                        "isHero": false,
+                        "stack": 1000,
+                        "betSize": 0,
+                        "holeCards": []
+                    },
+                    {
+                        "position": "HJ",
+                        "isHero": false,
+                        "stack": 1000,
+                        "betSize": 0,
+                        "holeCards": []
+                    },
+                    {
+                        "position": "CO",
+                        "isHero": false,
+                        "stack": 1000,
+                        "betSize": 0,
+                        "holeCards": []
+                    },
+                    {
+                        "position": "BTN",
+                        "isHero": false,
+                        "stack": 1000,
+                        "betSize": 0,
+                        "holeCards": []
+                    },
+                    {
+                        "position": "SB",
+                        "isHero": false,
+                        "stack": 998,
+                        "betSize": 2,
+                        "holeCards": []
+                    },
+                    {
+                        "position": "BB",
+                        "isHero": false,
+                        "stack": 995,
+                        "betSize": 5,
+                        "holeCards": []
+                    }
+                ]
+            },
+            "solution": {
+                "options": [
+                    "Fold",
+                    "Call",
+                    "3-bet Raise",
+                    "All In"
+                ],
+                "correctOptionIndex": 0,
+                "explanation": ""
+            }
+        },
+        {
+            "id": "pf021",
+            "type": "poker_puzzle",
+            "difficulty": 4,
+            "stakes": "2/5 NL",
+            "street": "preflop",
+            "scenario": {
+                "description": "",
+                "communityCards": [],
+                "potSize": 0,
+                "positions": [
+                    {
+                        "position": "LJ",
+                        "isHero": false,
+                        "stack": 1000,
+                        "betSize": 0,
+                        "holeCards": []
+                    },
+                    {
+                        "position": "HJ",
+                        "isHero": false,
+                        "stack": 1000,
+                        "betSize": 0,
+                        "holeCards": []
+                    },
+                    {
+                        "position": "CO",
+                        "isHero": false,
+                        "stack": 1000,
+                        "betSize": 0,
+                        "holeCards": []
+                    },
+                    {
+                        "position": "BTN",
+                        "isHero": false,
+                        "stack": 1000,
+                        "betSize": 0,
+                        "holeCards": []
+                    },
+                    {
+                        "position": "SB",
+                        "isHero": false,
+                        "stack": 998,
+                        "betSize": 2,
+                        "holeCards": []
+                    },
+                    {
+                        "position": "BB",
+                        "isHero": false,
+                        "stack": 995,
+                        "betSize": 5,
+                        "holeCards": []
+                    }
+                ]
+            },
+            "solution": {
+                "options": [
+                    "Fold",
+                    "Call",
+                    "3-bet Raise",
+                    "All In"
+                ],
+                "correctOptionIndex": 0,
+                "explanation": ""
+            }
+        },
+        {
+            "id": "pf022",
+            "type": "poker_puzzle",
+            "difficulty": 4,
+            "stakes": "2/5 NL",
+            "street": "preflop",
+            "scenario": {
+                "description": "",
+                "communityCards": [],
+                "potSize": 0,
+                "positions": [
+                    {
+                        "position": "LJ",
+                        "isHero": false,
+                        "stack": 1000,
+                        "betSize": 0,
+                        "holeCards": []
+                    },
+                    {
+                        "position": "HJ",
+                        "isHero": false,
+                        "stack": 1000,
+                        "betSize": 0,
+                        "holeCards": []
+                    },
+                    {
+                        "position": "CO",
+                        "isHero": false,
+                        "stack": 1000,
+                        "betSize": 0,
+                        "holeCards": []
+                    },
+                    {
+                        "position": "BTN",
+                        "isHero": false,
+                        "stack": 1000,
+                        "betSize": 0,
+                        "holeCards": []
+                    },
+                    {
+                        "position": "SB",
+                        "isHero": false,
+                        "stack": 998,
+                        "betSize": 2,
+                        "holeCards": []
+                    },
+                    {
+                        "position": "BB",
+                        "isHero": false,
+                        "stack": 995,
+                        "betSize": 5,
+                        "holeCards": []
+                    }
+                ]
+            },
+            "solution": {
+                "options": [
+                    "Fold",
+                    "Call",
+                    "3-bet Raise",
+                    "All In"
+                ],
+                "correctOptionIndex": 0,
+                "explanation": ""
+            }
+        },
+        {
+            "id": "pf023",
+            "type": "poker_puzzle",
+            "difficulty": 4,
+            "stakes": "2/5 NL",
+            "street": "preflop",
+            "scenario": {
+                "description": "",
+                "communityCards": [],
+                "potSize": 0,
+                "positions": [
+                    {
+                        "position": "LJ",
+                        "isHero": false,
+                        "stack": 1000,
+                        "betSize": 0,
+                        "holeCards": []
+                    },
+                    {
+                        "position": "HJ",
+                        "isHero": false,
+                        "stack": 1000,
+                        "betSize": 0,
+                        "holeCards": []
+                    },
+                    {
+                        "position": "CO",
+                        "isHero": false,
+                        "stack": 1000,
+                        "betSize": 0,
+                        "holeCards": []
+                    },
+                    {
+                        "position": "BTN",
+                        "isHero": false,
+                        "stack": 1000,
+                        "betSize": 0,
+                        "holeCards": []
+                    },
+                    {
+                        "position": "SB",
+                        "isHero": false,
+                        "stack": 998,
+                        "betSize": 2,
+                        "holeCards": []
+                    },
+                    {
+                        "position": "BB",
+                        "isHero": false,
+                        "stack": 995,
+                        "betSize": 5,
+                        "holeCards": []
+                    }
+                ]
+            },
+            "solution": {
+                "options": [
+                    "Fold",
+                    "Call",
+                    "3-bet Raise",
+                    "All In"
+                ],
+                "correctOptionIndex": 0,
+                "explanation": ""
+            }
+        },
+        {
+            "id": "pf024",
+            "type": "poker_puzzle",
+            "difficulty": 4,
+            "stakes": "2/5 NL",
+            "street": "preflop",
+            "scenario": {
+                "description": "",
+                "communityCards": [],
+                "potSize": 0,
+                "positions": [
+                    {
+                        "position": "LJ",
+                        "isHero": false,
+                        "stack": 1000,
+                        "betSize": 0,
+                        "holeCards": []
+                    },
+                    {
+                        "position": "HJ",
+                        "isHero": false,
+                        "stack": 1000,
+                        "betSize": 0,
+                        "holeCards": []
+                    },
+                    {
+                        "position": "CO",
+                        "isHero": false,
+                        "stack": 1000,
+                        "betSize": 0,
+                        "holeCards": []
+                    },
+                    {
+                        "position": "BTN",
+                        "isHero": false,
+                        "stack": 1000,
+                        "betSize": 0,
+                        "holeCards": []
+                    },
+                    {
+                        "position": "SB",
+                        "isHero": false,
+                        "stack": 998,
+                        "betSize": 2,
+                        "holeCards": []
+                    },
+                    {
+                        "position": "BB",
+                        "isHero": false,
+                        "stack": 995,
+                        "betSize": 5,
+                        "holeCards": []
+                    }
+                ]
+            },
+            "solution": {
+                "options": [
+                    "Fold",
+                    "Call",
+                    "3-bet Raise",
+                    "All In"
+                ],
+                "correctOptionIndex": 0,
+                "explanation": ""
+            }
+        },
+        {
+            "id": "pf025",
+            "type": "poker_puzzle",
+            "difficulty": 4,
+            "stakes": "2/5 NL",
+            "street": "preflop",
+            "scenario": {
+                "description": "",
+                "communityCards": [],
+                "potSize": 0,
+                "positions": [
+                    {
+                        "position": "LJ",
+                        "isHero": false,
+                        "stack": 1000,
+                        "betSize": 0,
+                        "holeCards": []
+                    },
+                    {
+                        "position": "HJ",
+                        "isHero": false,
+                        "stack": 1000,
+                        "betSize": 0,
+                        "holeCards": []
+                    },
+                    {
+                        "position": "CO",
+                        "isHero": false,
+                        "stack": 1000,
+                        "betSize": 0,
+                        "holeCards": []
+                    },
+                    {
+                        "position": "BTN",
+                        "isHero": false,
+                        "stack": 1000,
+                        "betSize": 0,
+                        "holeCards": []
+                    },
+                    {
+                        "position": "SB",
+                        "isHero": false,
+                        "stack": 998,
+                        "betSize": 2,
+                        "holeCards": []
+                    },
+                    {
+                        "position": "BB",
+                        "isHero": false,
+                        "stack": 995,
+                        "betSize": 5,
+                        "holeCards": []
+                    }
+                ]
+            },
+            "solution": {
+                "options": [
+                    "Fold",
+                    "Call",
+                    "3-bet Raise",
+                    "All In"
+                ],
+                "correctOptionIndex": 0,
+                "explanation": ""
+            }
+        },
+        {
+            "id": "pf026",
+            "type": "poker_puzzle",
+            "difficulty": 4,
+            "stakes": "2/5 NL",
+            "street": "preflop",
+            "scenario": {
+                "description": "",
+                "communityCards": [],
+                "potSize": 0,
+                "positions": [
+                    {
+                        "position": "LJ",
+                        "isHero": false,
+                        "stack": 1000,
+                        "betSize": 0,
+                        "holeCards": []
+                    },
+                    {
+                        "position": "HJ",
+                        "isHero": false,
+                        "stack": 1000,
+                        "betSize": 0,
+                        "holeCards": []
+                    },
+                    {
+                        "position": "CO",
+                        "isHero": false,
+                        "stack": 1000,
+                        "betSize": 0,
+                        "holeCards": []
+                    },
+                    {
+                        "position": "BTN",
+                        "isHero": false,
+                        "stack": 1000,
+                        "betSize": 0,
+                        "holeCards": []
+                    },
+                    {
+                        "position": "SB",
+                        "isHero": false,
+                        "stack": 998,
+                        "betSize": 2,
+                        "holeCards": []
+                    },
+                    {
+                        "position": "BB",
+                        "isHero": false,
+                        "stack": 995,
+                        "betSize": 5,
+                        "holeCards": []
+                    }
+                ]
+            },
+            "solution": {
+                "options": [
+                    "Fold",
+                    "Call",
+                    "3-bet Raise",
+                    "All In"
+                ],
+                "correctOptionIndex": 0,
+                "explanation": ""
+            }
+        },
+        {
+            "id": "pf027",
+            "type": "poker_puzzle",
+            "difficulty": 4,
+            "stakes": "2/5 NL",
+            "street": "preflop",
+            "scenario": {
+                "description": "",
+                "communityCards": [],
+                "potSize": 0,
+                "positions": [
+                    {
+                        "position": "LJ",
+                        "isHero": false,
+                        "stack": 1000,
+                        "betSize": 0,
+                        "holeCards": []
+                    },
+                    {
+                        "position": "HJ",
+                        "isHero": false,
+                        "stack": 1000,
+                        "betSize": 0,
+                        "holeCards": []
+                    },
+                    {
+                        "position": "CO",
+                        "isHero": false,
+                        "stack": 1000,
+                        "betSize": 0,
+                        "holeCards": []
+                    },
+                    {
+                        "position": "BTN",
+                        "isHero": false,
+                        "stack": 1000,
+                        "betSize": 0,
+                        "holeCards": []
+                    },
+                    {
+                        "position": "SB",
+                        "isHero": false,
+                        "stack": 998,
+                        "betSize": 2,
+                        "holeCards": []
+                    },
+                    {
+                        "position": "BB",
+                        "isHero": false,
+                        "stack": 995,
+                        "betSize": 5,
+                        "holeCards": []
+                    }
+                ]
+            },
+            "solution": {
+                "options": [
+                    "Fold",
+                    "Call",
+                    "3-bet Raise",
+                    "All In"
+                ],
+                "correctOptionIndex": 0,
+                "explanation": ""
+            }
+        },
+        {
+            "id": "pf028",
+            "type": "poker_puzzle",
+            "difficulty": 4,
+            "stakes": "2/5 NL",
+            "street": "preflop",
+            "scenario": {
+                "description": "",
+                "communityCards": [],
+                "potSize": 0,
+                "positions": [
+                    {
+                        "position": "LJ",
+                        "isHero": false,
+                        "stack": 1000,
+                        "betSize": 0,
+                        "holeCards": []
+                    },
+                    {
+                        "position": "HJ",
+                        "isHero": false,
+                        "stack": 1000,
+                        "betSize": 0,
+                        "holeCards": []
+                    },
+                    {
+                        "position": "CO",
+                        "isHero": false,
+                        "stack": 1000,
+                        "betSize": 0,
+                        "holeCards": []
+                    },
+                    {
+                        "position": "BTN",
+                        "isHero": false,
+                        "stack": 1000,
+                        "betSize": 0,
+                        "holeCards": []
+                    },
+                    {
+                        "position": "SB",
+                        "isHero": false,
+                        "stack": 998,
+                        "betSize": 2,
+                        "holeCards": []
+                    },
+                    {
+                        "position": "BB",
+                        "isHero": false,
+                        "stack": 995,
+                        "betSize": 5,
+                        "holeCards": []
+                    }
+                ]
+            },
+            "solution": {
+                "options": [
+                    "Fold",
+                    "Call",
+                    "3-bet Raise",
+                    "All In"
+                ],
+                "correctOptionIndex": 0,
+                "explanation": ""
+            }
+        },
+        {
+            "id": "pf029",
+            "type": "poker_puzzle",
+            "difficulty": 4,
+            "stakes": "2/5 NL",
+            "street": "preflop",
+            "scenario": {
+                "description": "",
+                "communityCards": [],
+                "potSize": 0,
+                "positions": [
+                    {
+                        "position": "LJ",
+                        "isHero": false,
+                        "stack": 1000,
+                        "betSize": 0,
+                        "holeCards": []
+                    },
+                    {
+                        "position": "HJ",
+                        "isHero": false,
+                        "stack": 1000,
+                        "betSize": 0,
+                        "holeCards": []
+                    },
+                    {
+                        "position": "CO",
+                        "isHero": false,
+                        "stack": 1000,
+                        "betSize": 0,
+                        "holeCards": []
+                    },
+                    {
+                        "position": "BTN",
+                        "isHero": false,
+                        "stack": 1000,
+                        "betSize": 0,
+                        "holeCards": []
+                    },
+                    {
+                        "position": "SB",
+                        "isHero": false,
+                        "stack": 998,
+                        "betSize": 2,
+                        "holeCards": []
+                    },
+                    {
+                        "position": "BB",
+                        "isHero": false,
+                        "stack": 995,
+                        "betSize": 5,
+                        "holeCards": []
+                    }
+                ]
+            },
+            "solution": {
+                "options": [
+                    "Fold",
+                    "Call",
+                    "3-bet Raise",
+                    "All In"
+                ],
+                "correctOptionIndex": 0,
+                "explanation": ""
+            }
+        },
+        {
+            "id": "pf030",
+            "type": "poker_puzzle",
+            "difficulty": 4,
+            "stakes": "2/5 NL",
+            "street": "preflop",
+            "scenario": {
+                "description": "",
+                "communityCards": [],
+                "potSize": 0,
+                "positions": [
+                    {
+                        "position": "LJ",
+                        "isHero": false,
+                        "stack": 1000,
+                        "betSize": 0,
+                        "holeCards": []
+                    },
+                    {
+                        "position": "HJ",
+                        "isHero": false,
+                        "stack": 1000,
+                        "betSize": 0,
+                        "holeCards": []
+                    },
+                    {
+                        "position": "CO",
+                        "isHero": false,
+                        "stack": 1000,
+                        "betSize": 0,
+                        "holeCards": []
+                    },
+                    {
+                        "position": "BTN",
+                        "isHero": false,
+                        "stack": 1000,
+                        "betSize": 0,
+                        "holeCards": []
+                    },
+                    {
+                        "position": "SB",
+                        "isHero": false,
+                        "stack": 998,
+                        "betSize": 2,
+                        "holeCards": []
+                    },
+                    {
+                        "position": "BB",
+                        "isHero": false,
+                        "stack": 995,
+                        "betSize": 5,
+                        "holeCards": []
+                    }
+                ]
+            },
+            "solution": {
+                "options": [
+                    "Fold",
+                    "Call",
+                    "3-bet Raise",
+                    "All In"
+                ],
+                "correctOptionIndex": 0,
+                "explanation": ""
+            }
+        },
+        {
+            "id": "pf031",
+            "type": "poker_puzzle",
+            "difficulty": 4,
+            "stakes": "2/5 NL",
+            "street": "preflop",
+            "scenario": {
+                "description": "",
+                "communityCards": [],
+                "potSize": 0,
+                "positions": [
+                    {
+                        "position": "LJ",
+                        "isHero": false,
+                        "stack": 1000,
+                        "betSize": 0,
+                        "holeCards": []
+                    },
+                    {
+                        "position": "HJ",
+                        "isHero": false,
+                        "stack": 1000,
+                        "betSize": 0,
+                        "holeCards": []
+                    },
+                    {
+                        "position": "CO",
+                        "isHero": false,
+                        "stack": 1000,
+                        "betSize": 0,
+                        "holeCards": []
+                    },
+                    {
+                        "position": "BTN",
+                        "isHero": false,
+                        "stack": 1000,
+                        "betSize": 0,
+                        "holeCards": []
+                    },
+                    {
+                        "position": "SB",
+                        "isHero": false,
+                        "stack": 998,
+                        "betSize": 2,
+                        "holeCards": []
+                    },
+                    {
+                        "position": "BB",
+                        "isHero": false,
+                        "stack": 995,
+                        "betSize": 5,
+                        "holeCards": []
+                    }
+                ]
+            },
+            "solution": {
+                "options": [
+                    "Fold",
+                    "Call",
+                    "3-bet Raise",
+                    "All In"
+                ],
+                "correctOptionIndex": 0,
+                "explanation": ""
+            }
+        },
+        {
+            "id": "pf032",
+            "type": "poker_puzzle",
+            "difficulty": 4,
+            "stakes": "2/5 NL",
+            "street": "preflop",
+            "scenario": {
+                "description": "",
+                "communityCards": [],
+                "potSize": 0,
+                "positions": [
+                    {
+                        "position": "LJ",
+                        "isHero": false,
+                        "stack": 1000,
+                        "betSize": 0,
+                        "holeCards": []
+                    },
+                    {
+                        "position": "HJ",
+                        "isHero": false,
+                        "stack": 1000,
+                        "betSize": 0,
+                        "holeCards": []
+                    },
+                    {
+                        "position": "CO",
+                        "isHero": false,
+                        "stack": 1000,
+                        "betSize": 0,
+                        "holeCards": []
+                    },
+                    {
+                        "position": "BTN",
+                        "isHero": false,
+                        "stack": 1000,
+                        "betSize": 0,
+                        "holeCards": []
+                    },
+                    {
+                        "position": "SB",
+                        "isHero": false,
+                        "stack": 998,
+                        "betSize": 2,
+                        "holeCards": []
+                    },
+                    {
+                        "position": "BB",
+                        "isHero": false,
+                        "stack": 995,
+                        "betSize": 5,
+                        "holeCards": []
+                    }
+                ]
+            },
+            "solution": {
+                "options": [
+                    "Fold",
+                    "Call",
+                    "3-bet Raise",
+                    "All In"
+                ],
+                "correctOptionIndex": 0,
+                "explanation": ""
+            }
+        },
+        {
+            "id": "pf033",
+            "type": "poker_puzzle",
+            "difficulty": 4,
+            "stakes": "2/5 NL",
+            "street": "preflop",
+            "scenario": {
+                "description": "",
+                "communityCards": [],
+                "potSize": 0,
+                "positions": [
+                    {
+                        "position": "LJ",
+                        "isHero": false,
+                        "stack": 1000,
+                        "betSize": 0,
+                        "holeCards": []
+                    },
+                    {
+                        "position": "HJ",
+                        "isHero": false,
+                        "stack": 1000,
+                        "betSize": 0,
+                        "holeCards": []
+                    },
+                    {
+                        "position": "CO",
+                        "isHero": false,
+                        "stack": 1000,
+                        "betSize": 0,
+                        "holeCards": []
+                    },
+                    {
+                        "position": "BTN",
+                        "isHero": false,
+                        "stack": 1000,
+                        "betSize": 0,
+                        "holeCards": []
+                    },
+                    {
+                        "position": "SB",
+                        "isHero": false,
+                        "stack": 998,
+                        "betSize": 2,
+                        "holeCards": []
+                    },
+                    {
+                        "position": "BB",
+                        "isHero": false,
+                        "stack": 995,
+                        "betSize": 5,
+                        "holeCards": []
+                    }
+                ]
+            },
+            "solution": {
+                "options": [
+                    "Fold",
+                    "Call",
+                    "3-bet Raise",
+                    "All In"
+                ],
+                "correctOptionIndex": 0,
+                "explanation": ""
+            }
+        },
+        {
+            "id": "pf034",
+            "type": "poker_puzzle",
+            "difficulty": 4,
+            "stakes": "2/5 NL",
+            "street": "preflop",
+            "scenario": {
+                "description": "",
+                "communityCards": [],
+                "potSize": 0,
+                "positions": [
+                    {
+                        "position": "LJ",
+                        "isHero": false,
+                        "stack": 1000,
+                        "betSize": 0,
+                        "holeCards": []
+                    },
+                    {
+                        "position": "HJ",
+                        "isHero": false,
+                        "stack": 1000,
+                        "betSize": 0,
+                        "holeCards": []
+                    },
+                    {
+                        "position": "CO",
+                        "isHero": false,
+                        "stack": 1000,
+                        "betSize": 0,
+                        "holeCards": []
+                    },
+                    {
+                        "position": "BTN",
+                        "isHero": false,
+                        "stack": 1000,
+                        "betSize": 0,
+                        "holeCards": []
+                    },
+                    {
+                        "position": "SB",
+                        "isHero": false,
+                        "stack": 998,
+                        "betSize": 2,
+                        "holeCards": []
+                    },
+                    {
+                        "position": "BB",
+                        "isHero": false,
+                        "stack": 995,
+                        "betSize": 5,
+                        "holeCards": []
+                    }
+                ]
+            },
+            "solution": {
+                "options": [
+                    "Fold",
+                    "Call",
+                    "3-bet Raise",
+                    "All In"
+                ],
+                "correctOptionIndex": 0,
+                "explanation": ""
             }
         }
     ]

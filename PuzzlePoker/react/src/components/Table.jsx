@@ -17,10 +17,11 @@ function Table({ tablePuzzle }) {
 
     const { scenario, solution } = tablePuzzle;
     const { description, communityCards, potSize, positions } = scenario;
-    const { options, correctOptionIndex, explanation } = solution;
+    const { options, hint, correctOptionIndex, explanation } = solution;
     const [selectedOption, setSelectedOption] = useState(null);
     const [isCorrect, setIsCorrect] = useState(false);
     const [correctFirstTry, setCorrectFirstTry] = useState(null);
+    const [showHint, setShowHint] = useState(false);
 
     useEffect(() => {
         setSelectedOption(null);
@@ -30,6 +31,9 @@ function Table({ tablePuzzle }) {
 
     const handleOptionClick = (index) => {
         if (selectedOption === null) {
+            if (index === 3) {
+                setShowHint(true);
+            }
             setSelectedOption(index);
             setIsCorrect(index === correctOptionIndex);
             if (correctFirstTry === null) {
@@ -41,6 +45,7 @@ function Table({ tablePuzzle }) {
     const handleReset = () => {
         setSelectedOption(null);
         setIsCorrect(false);
+        setShowHint(false);
     }
 
     return (
@@ -94,7 +99,7 @@ function Table({ tablePuzzle }) {
                                 Correct! {explanation}
                             </div>
                         )}
-                        {!isCorrect && (
+                        {!showHint && !isCorrect && (
                             <div>
                                 <div className="mt-4 text-red-500">
                                     Incorrect.
@@ -107,6 +112,21 @@ function Table({ tablePuzzle }) {
                                 </button>
                             </div>
                         )}
+                        {
+                            showHint && (
+                                <div>
+                                    <div className="mt-4 text-yellow-500">
+                                        {hint}
+                                    </div>
+                                    <button
+                                        onClick={handleReset}
+                                        className="mt-4 bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 transition-colors"
+                                    >
+                                        Attempt Puzzle
+                                    </button>
+                                </div>
+                            )
+                        }
                     </div>
                 )}
             </div>
@@ -121,8 +141,8 @@ function Table({ tablePuzzle }) {
                 <button className="bg-green-700 rounded-md py-3 px-8 text-lg font-semibold border border-gray-700 hover:bg-green-800 transition-colors duration-150" onClick={() => handleOptionClick(2)}>
                     {options[2]}
                 </button>
-                <button className="bg-green-700 rounded-md py-3 px-8 text-lg font-semibold border border-gray-700 hover:bg-green-800 transition-colors duration-150" onClick={() => handleOptionClick(3)}>
-                    {options[3]}
+                <button className="bg-blue-800 rounded-md py-3 px-8 text-lg font-semibold border border-gray-700 hover:bg-blue-900 transition-colors duration-150" onClick={() => handleOptionClick(3)}>
+                    Need help? Reveal Hint
                 </button>
             </div>
         </div >

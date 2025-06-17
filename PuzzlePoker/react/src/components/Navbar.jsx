@@ -1,15 +1,13 @@
 // src/components/Navbar.jsx
 import { Link, useLocation } from 'react-router-dom';
-import { useAuth } from '../contexts/AuthContext';
 
 function Navbar() {
-  const { currentUser } = useAuth();
   const location = useLocation();
 
   const navItems = [
-    { path: '/puzzles', label: 'Puzzles', forUsers: true, forGuests: true },
-    { path: '/play', label: 'Play', forUsers: true, forGuests: true },
-  ].filter(item => (currentUser && item.forUsers) || (!currentUser && item.forGuests));
+    { path: '/puzzles', label: 'Puzzles' },
+    //{ path: '/play', label: 'Play' },
+  ];
 
   return (
     <nav className="bg-gray-900 text-white shadow-lg">

@@ -1,11 +1,9 @@
-
-
 function Play() {
     return (
         <div>
-            <h1>Play</h1>
+            <h1 className="text-white">Play Page In Progress.</h1>
         </div>
-    )
+    );
 }
 
 export default Play;
