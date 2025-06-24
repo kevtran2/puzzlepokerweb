@@ -23,21 +23,16 @@ function Table({ tablePuzzle }) {
     const [correctFirstTry, setCorrectFirstTry] = useState(null);
     const [showHint, setShowHint] = useState(false);
 
-    useEffect(() => {
-        setSelectedOption(null);
-        setIsCorrect(false);
-        setCorrectFirstTry(null);
-    }, [tablePuzzle]);
-
     const handleOptionClick = (index) => {
         if (selectedOption === null) {
             if (index === 3) {
                 setShowHint(true);
             }
+            const isAnswerCorrect = index === correctOptionIndex;
             setSelectedOption(index);
-            setIsCorrect(index === correctOptionIndex);
+            setIsCorrect(isAnswerCorrect);
             if (correctFirstTry === null) {
-                setCorrectFirstTry(isCorrect);
+                setCorrectFirstTry(isAnswerCorrect);
             }
         }
     }
@@ -89,8 +84,16 @@ function Table({ tablePuzzle }) {
                     </div>
 
                 ))}
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white px-12 py-12 rounded-full font-bold">
-                    Pot: 0
+                <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white bg-gray-900 px-6 py-2 rounded-md font-bold">
+                    Pot: {potSize}
+                </div>
+                <div
+                    className='flex absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2'>
+                    {communityCards.map((card, i) => (
+                        <div key={i}>
+                            <Card suit={`${card.suit}`} rank={`${card.rank}`} />
+                        </div>
+                    ))}
                 </div>
                 {selectedOption !== null && (
                     <div className="absolute bg-gray-900 text-center text-lg top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 px-6 py-6 rounded-md font-bold">

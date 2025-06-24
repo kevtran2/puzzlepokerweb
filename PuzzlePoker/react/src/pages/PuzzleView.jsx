@@ -37,6 +37,7 @@ function PuzzleView() {
         </p>
       </div>
       <Table
+        key={currentPuzzle?.id}
         tablePuzzle={currentPuzzle}
       />
       <div>
