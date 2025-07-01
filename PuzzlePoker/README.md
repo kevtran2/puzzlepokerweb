@@ -1,15 +1,24 @@
 # This is PuzzlePoker. 
 ## An app designed to change the way we train and play poker.  
 
-Learning and playing the game of poker can be overwhelming. There are a lot of training resources and apps where you can play poker(alongside a bunch of casino-like gimics). 
+Learning and playing the game of poker can be overwhelming. 
 
-The mission of PuzzlePoker is to give players of all levels an organized platform to train, think, and play poker with their friends and the online community. PuzzlePoker aims to unite AI with GTO (Game Theory Optimal) solvers like GTOWizards to  
-make studying the game accessible for even a beginner.
+There are a lot of training resources and apps where you can play poker(alongside a bunch of casino-like gimics). 
 
+The mission of PuzzlePoker is to give players of all levels an organized platform to train, think, and play poker with  
+their friends and the online community. PuzzlePoker aims to unite AI with GTO (Game Theory Optimal) solvers like  
+GTOWizard to make studying the game accessible for even a beginner.
 
 # Technical Decisions
-## Below 
+## More on our stack and how the platform is designed
 
+### Tech Stack
+
+- React
+- Vite
+- TailwindCSS
+- ESLint
+- Javascript
 
 # How to run
 ## A Guide on how to start up the web application
@@ -17,7 +26,9 @@ make studying the game accessible for even a beginner.
 To start server: 
 "npm run dev" in the react directory
 
-Visit the web page where it is hosted ex: http://localhost:5173/
+Visit the web page where it is hosted, for example: http://localhost:5173/
+
+We hope to have the site hosted publicly in a couple weeks once the MVP is complete.
 
 # Features currently worked on
 ## See what PuzzlePoker is currently up to
@@ -31,6 +42,8 @@ TODO:
 - add reference to GTO play. how does the suggested answer differ from what is GTO optimal? What type of exploit is it going for?
 - add past pros moves problem set
 - users have money for games, earn money by logging in daily, can lose and be unable to play, richest player leaderboard
+
+The following is a list of poker terms that may need to be added to the site for users to view to define terminology they may not be familiar with.
 
 Poker Terms:
 -In poker, "stab" refers to making a bet or continuation bet (c-bet) on the flop after having raised preflop, especially when it's a bet designed to take down the pot uncontested, rather than a bet made for value. It often implies a semi-bluff or bluff, aiming to capitalize on opponents' perceived weakness or lack of interest in the pot. 
