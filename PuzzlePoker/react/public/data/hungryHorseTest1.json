@@ -1082,7 +1082,7 @@
                         "rank": "2"
                     }
                 ],
-                "potSize": 47,
+                "potSize": 42,
                 "positions": [
                     {
                         "position": "LJ",
@@ -1276,7 +1276,7 @@
                         "rank": "2"
                     }
                 ],
-                "potSize": 0,
+                "potSize": 42,
                 "positions": [
                     {
                         "position": "LJ",
