@@ -31,20 +31,19 @@ Visit the web page where it is hosted, for example: http://localhost:5173/
 
 We hope to have the site hosted publicly in a couple weeks once the MVP is complete.
 
-# Features we want to add: Learn more about our progress and plans
+# Features coming to PuzzlePoker: Learn more about our progress and plans
 
-TODO:
-- add correct answer count
-- add info/vocab button with initial tutorial pop-up
-- add more puzzle problems
-- add login for progress saving
-- add ask AI(maybe limit tokens, make paid users to have access to AI coach)
-- add reference to GTO play. how does the suggested answer differ from what is GTO optimal? What type of exploit is it going for?
-- add past pros moves problem set
-- users have money for games, earn money by logging in daily, can lose and be unable to play, richest player leaderboard
+- Add correct answer count
+- Add info/vocab button with initial tutorial pop-up
+- Add more puzzle problems
+- Add login for progress saving
+- Add ask AI(maybe limit tokens, make paid users to have access to AI coach)
+- Add reference to GTO play. How does the suggested answer differ from what is GTO optimal? What type of exploit is it going for? Utilize LLMs to explain what is going on.
+- Add past pros moves problem set
+- Users have money for games, earn money by logging in daily, can lose and be unable to play, richest player leaderboard
 
-The following is a list of poker terms that may need to be added to the site for users to view to define terminology they may not be familiar with.
+# The following is a list of poker terms that may need to be added to the site for users to view to define terminology they may not be familiar with.
 
-Poker Terms:
--In poker, "stab" refers to making a bet or continuation bet (c-bet) on the flop after having raised preflop, especially when it's a bet designed to take down the pot uncontested, rather than a bet made for value. It often implies a semi-bluff or bluff, aiming to capitalize on opponents' perceived weakness or lack of interest in the pot. 
--
+- Stab: In poker, "stab" refers to making a bet or continuation bet (c-bet) on the flop after having raised preflop, especially when it's a bet designed to take down the pot uncontested, rather than a bet made for value. It often implies a semi-bluff or bluff, aiming to capitalize on opponents' perceived weakness or lack of interest in the pot. 
+- Fish: a player who is weak
+- Reg: a regular, often meaning this player is experience playing poker
