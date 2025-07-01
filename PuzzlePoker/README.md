@@ -42,7 +42,7 @@ We hope to have the site hosted publicly in a couple weeks once the MVP is compl
 - Add past pros moves problem set
 - Users have money for games, earn money by logging in daily, can lose and be unable to play, richest player leaderboard
 
-# The following is a list of poker terms that may need to be added to the site for users to view to define terminology they may not be familiar with.
+# Poker terminology that users may be unfamiliar with
 
 - Stab: In poker, "stab" refers to making a bet or continuation bet (c-bet) on the flop after having raised preflop, especially when it's a bet designed to take down the pot uncontested, rather than a bet made for value. It often implies a semi-bluff or bluff, aiming to capitalize on opponents' perceived weakness or lack of interest in the pot. 
 - Fish: a player who is weak
