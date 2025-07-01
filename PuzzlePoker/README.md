@@ -22,7 +22,7 @@ Currently, PuzzlePoker is being run by a solo dev, me! With this in mind, the de
 
 With regards to the design of the platform itself, currently I only have the first iteration of the puzzle training feature complete. There are many things I still want to add and am still working on, but for now(as of July 1st, 2025) we only have the puzzle feature. The puzzle feature loads a bunch of puzzles from a json file and uploads each puzzle one by one on the poker table. To the right of a table, are 4 multiple choice options for the user to decide what the best move in each position is, including a hint button. 
 
-# How to run: A Guide on how to start up the web application 
+# How to run the web application
 
 To start server: 
 "npm run dev" in the react directory
