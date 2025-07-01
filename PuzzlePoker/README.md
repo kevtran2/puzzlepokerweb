@@ -1,18 +1,16 @@
-# This is PuzzlePoker. 
-## An app designed to change the way we train and play poker.  
+# PuzzlePoker: An app designed to change the way we train and play poker.  
 
 Learning and playing the game of poker can be overwhelming. 
 
-There are a lot of training resources and apps where you can play poker(alongside a bunch of casino-like gimics). 
+There are a lot of training resources and apps where you can play poker, however, it is often cluttered with casino-like gimics, aggressive monetization, and difficult to navigate UI.
 
 The mission of PuzzlePoker is to give players of all levels an organized platform to train, think, and play poker with  
 their friends and the online community. PuzzlePoker aims to unite AI with GTO (Game Theory Optimal) solvers like  
 GTOWizard to make studying the game accessible for even a beginner.
 
-# Technical Decisions
-## More on our stack and how the platform is designed
+# Technical Decisions: How the platform is being designed
 
-### Tech Stack
+## Tech Stack
 
 - React
 - Vite
@@ -20,8 +18,11 @@ GTOWizard to make studying the game accessible for even a beginner.
 - ESLint
 - Javascript
 
-# How to run
-## A Guide on how to start up the web application
+Currently, PuzzlePoker is being run by a solo dev, me! With this in mind, the decision to use React + Vite + TailwindCSS was to simplify the web application building process to iterate and build quickly. Although TypeScript does offer type safety and would be the preferred language, I wanted to focus on building up my comfort using JavaScript as I am newer to the web programming languages and many things nowadays are in JavaScript or TypeScript. 
+
+With regards to the design of the platform itself, currently I only have the first iteration of the puzzle training feature complete. There are many things I still want to add and am still working on, but for now(as of July 1st, 2025) we only have the puzzle feature. The puzzle feature loads a bunch of puzzles from a json file and uploads each puzzle one by one on the poker table. To the right of a table, are 4 multiple choice options for the user to decide what the best move in each position is, including a hint button. 
+
+# How to run: A Guide on how to start up the web application 
 
 To start server: 
 "npm run dev" in the react directory
@@ -30,8 +31,7 @@ Visit the web page where it is hosted, for example: http://localhost:5173/
 
 We hope to have the site hosted publicly in a couple weeks once the MVP is complete.
 
-# Features currently worked on
-## See what PuzzlePoker is currently up to
+# Features we want to add: Learn more about our progress and plans
 
 TODO:
 - add correct answer count
